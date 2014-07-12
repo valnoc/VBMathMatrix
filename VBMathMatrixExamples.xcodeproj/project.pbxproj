@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5BC335551971B039009C49C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC335541971B039009C49C5 /* Foundation.framework */; };
+		5BC335571971B039009C49C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC335561971B039009C49C5 /* CoreGraphics.framework */; };
+		5BC335591971B039009C49C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC335581971B039009C49C5 /* UIKit.framework */; };
+		5BC3355F1971B039009C49C5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BC3355D1971B039009C49C5 /* InfoPlist.strings */; };
+		5BC335611971B039009C49C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC335601971B039009C49C5 /* main.m */; };
+		5BC335651971B039009C49C5 /* VBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC335641971B039009C49C5 /* VBAppDelegate.m */; };
+		5BC335671971B039009C49C5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BC335661971B039009C49C5 /* Images.xcassets */; };
+		5BC3356E1971B039009C49C5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC3356D1971B039009C49C5 /* XCTest.framework */; };
+		5BC3356F1971B039009C49C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC335541971B039009C49C5 /* Foundation.framework */; };
+		5BC335701971B039009C49C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC335581971B039009C49C5 /* UIKit.framework */; };
+		5BC335781971B039009C49C5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BC335761971B039009C49C5 /* InfoPlist.strings */; };
+		5BC3357A1971B039009C49C5 /* VBMathMatrixExamplesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC335791971B039009C49C5 /* VBMathMatrixExamplesTests.m */; };
+		5BE12E3B1971B0F2004EC648 /* VBMathMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE12E3A1971B0F2004EC648 /* VBMathMatrix.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5BC335711971B039009C49C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BC335491971B039009C49C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BC335501971B039009C49C5;
+			remoteInfo = VBMathMatrixExamples;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5BC335511971B039009C49C5 /* VBMathMatrixExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VBMathMatrixExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BC335541971B039009C49C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5BC335561971B039009C49C5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5BC335581971B039009C49C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5BC3355C1971B039009C49C5 /* VBMathMatrixExamples-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VBMathMatrixExamples-Info.plist"; sourceTree = "<group>"; };
+		5BC3355E1971B039009C49C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5BC335601971B039009C49C5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5BC335621971B039009C49C5 /* VBMathMatrixExamples-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VBMathMatrixExamples-Prefix.pch"; sourceTree = "<group>"; };
+		5BC335631971B039009C49C5 /* VBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VBAppDelegate.h; sourceTree = "<group>"; };
+		5BC335641971B039009C49C5 /* VBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VBAppDelegate.m; sourceTree = "<group>"; };
+		5BC335661971B039009C49C5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5BC3356C1971B039009C49C5 /* VBMathMatrixExamplesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VBMathMatrixExamplesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BC3356D1971B039009C49C5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		5BC335751971B039009C49C5 /* VBMathMatrixExamplesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VBMathMatrixExamplesTests-Info.plist"; sourceTree = "<group>"; };
+		5BC335771971B039009C49C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5BC335791971B039009C49C5 /* VBMathMatrixExamplesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VBMathMatrixExamplesTests.m; sourceTree = "<group>"; };
+		5BE12E391971B0F2004EC648 /* VBMathMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBMathMatrix.h; sourceTree = "<group>"; };
+		5BE12E3A1971B0F2004EC648 /* VBMathMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBMathMatrix.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5BC3354E1971B039009C49C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BC335571971B039009C49C5 /* CoreGraphics.framework in Frameworks */,
+				5BC335591971B039009C49C5 /* UIKit.framework in Frameworks */,
+				5BC335551971B039009C49C5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BC335691971B039009C49C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BC3356E1971B039009C49C5 /* XCTest.framework in Frameworks */,
+				5BC335701971B039009C49C5 /* UIKit.framework in Frameworks */,
+				5BC3356F1971B039009C49C5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5BC335481971B039009C49C5 = {
+			isa = PBXGroup;
+			children = (
+				5BE12E381971B09B004EC648 /* VBMathMatrix */,
+				5BC3355A1971B039009C49C5 /* VBMathMatrixExamples */,
+				5BC335731971B039009C49C5 /* VBMathMatrixExamplesTests */,
+				5BC335531971B039009C49C5 /* Frameworks */,
+				5BC335521971B039009C49C5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5BC335521971B039009C49C5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5BC335511971B039009C49C5 /* VBMathMatrixExamples.app */,
+				5BC3356C1971B039009C49C5 /* VBMathMatrixExamplesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5BC335531971B039009C49C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5BC335541971B039009C49C5 /* Foundation.framework */,
+				5BC335561971B039009C49C5 /* CoreGraphics.framework */,
+				5BC335581971B039009C49C5 /* UIKit.framework */,
+				5BC3356D1971B039009C49C5 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5BC3355A1971B039009C49C5 /* VBMathMatrixExamples */ = {
+			isa = PBXGroup;
+			children = (
+				5BC335631971B039009C49C5 /* VBAppDelegate.h */,
+				5BC335641971B039009C49C5 /* VBAppDelegate.m */,
+				5BC335661971B039009C49C5 /* Images.xcassets */,
+				5BC3355B1971B039009C49C5 /* Supporting Files */,
+			);
+			path = VBMathMatrixExamples;
+			sourceTree = "<group>";
+		};
+		5BC3355B1971B039009C49C5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5BC3355C1971B039009C49C5 /* VBMathMatrixExamples-Info.plist */,
+				5BC3355D1971B039009C49C5 /* InfoPlist.strings */,
+				5BC335601971B039009C49C5 /* main.m */,
+				5BC335621971B039009C49C5 /* VBMathMatrixExamples-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5BC335731971B039009C49C5 /* VBMathMatrixExamplesTests */ = {
+			isa = PBXGroup;
+			children = (
+				5BC335791971B039009C49C5 /* VBMathMatrixExamplesTests.m */,
+				5BC335741971B039009C49C5 /* Supporting Files */,
+			);
+			path = VBMathMatrixExamplesTests;
+			sourceTree = "<group>";
+		};
+		5BC335741971B039009C49C5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5BC335751971B039009C49C5 /* VBMathMatrixExamplesTests-Info.plist */,
+				5BC335761971B039009C49C5 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5BE12E381971B09B004EC648 /* VBMathMatrix */ = {
+			isa = PBXGroup;
+			children = (
+				5BE12E391971B0F2004EC648 /* VBMathMatrix.h */,
+				5BE12E3A1971B0F2004EC648 /* VBMathMatrix.m */,
+			);
+			path = VBMathMatrix;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5BC335501971B039009C49C5 /* VBMathMatrixExamples */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BC3357D1971B039009C49C5 /* Build configuration list for PBXNativeTarget "VBMathMatrixExamples" */;
+			buildPhases = (
+				5BC3354D1971B039009C49C5 /* Sources */,
+				5BC3354E1971B039009C49C5 /* Frameworks */,
+				5BC3354F1971B039009C49C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VBMathMatrixExamples;
+			productName = VBMathMatrixExamples;
+			productReference = 5BC335511971B039009C49C5 /* VBMathMatrixExamples.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5BC3356B1971B039009C49C5 /* VBMathMatrixExamplesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BC335801971B039009C49C5 /* Build configuration list for PBXNativeTarget "VBMathMatrixExamplesTests" */;
+			buildPhases = (
+				5BC335681971B039009C49C5 /* Sources */,
+				5BC335691971B039009C49C5 /* Frameworks */,
+				5BC3356A1971B039009C49C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BC335721971B039009C49C5 /* PBXTargetDependency */,
+			);
+			name = VBMathMatrixExamplesTests;
+			productName = VBMathMatrixExamplesTests;
+			productReference = 5BC3356C1971B039009C49C5 /* VBMathMatrixExamplesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5BC335491971B039009C49C5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = VB;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Valeriy Bezuglyy";
+				TargetAttributes = {
+					5BC3356B1971B039009C49C5 = {
+						TestTargetID = 5BC335501971B039009C49C5;
+					};
+				};
+			};
+			buildConfigurationList = 5BC3354C1971B039009C49C5 /* Build configuration list for PBXProject "VBMathMatrixExamples" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5BC335481971B039009C49C5;
+			productRefGroup = 5BC335521971B039009C49C5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5BC335501971B039009C49C5 /* VBMathMatrixExamples */,
+				5BC3356B1971B039009C49C5 /* VBMathMatrixExamplesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5BC3354F1971B039009C49C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BC3355F1971B039009C49C5 /* InfoPlist.strings in Resources */,
+				5BC335671971B039009C49C5 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BC3356A1971B039009C49C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BC335781971B039009C49C5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5BC3354D1971B039009C49C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BE12E3B1971B0F2004EC648 /* VBMathMatrix.m in Sources */,
+				5BC335651971B039009C49C5 /* VBAppDelegate.m in Sources */,
+				5BC335611971B039009C49C5 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BC335681971B039009C49C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BC3357A1971B039009C49C5 /* VBMathMatrixExamplesTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5BC335721971B039009C49C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BC335501971B039009C49C5 /* VBMathMatrixExamples */;
+			targetProxy = 5BC335711971B039009C49C5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5BC3355D1971B039009C49C5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BC3355E1971B039009C49C5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5BC335761971B039009C49C5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BC335771971B039009C49C5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5BC3357B1971B039009C49C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5BC3357C1971B039009C49C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5BC3357E1971B039009C49C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VBMathMatrixExamples/VBMathMatrixExamples-Prefix.pch";
+				INFOPLIST_FILE = "VBMathMatrixExamples/VBMathMatrixExamples-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5BC3357F1971B039009C49C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VBMathMatrixExamples/VBMathMatrixExamples-Prefix.pch";
+				INFOPLIST_FILE = "VBMathMatrixExamples/VBMathMatrixExamples-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		5BC335811971B039009C49C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/VBMathMatrixExamples.app/VBMathMatrixExamples";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VBMathMatrixExamples/VBMathMatrixExamples-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "VBMathMatrixExamplesTests/VBMathMatrixExamplesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		5BC335821971B039009C49C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/VBMathMatrixExamples.app/VBMathMatrixExamples";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VBMathMatrixExamples/VBMathMatrixExamples-Prefix.pch";
+				INFOPLIST_FILE = "VBMathMatrixExamplesTests/VBMathMatrixExamplesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5BC3354C1971B039009C49C5 /* Build configuration list for PBXProject "VBMathMatrixExamples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BC3357B1971B039009C49C5 /* Debug */,
+				5BC3357C1971B039009C49C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BC3357D1971B039009C49C5 /* Build configuration list for PBXNativeTarget "VBMathMatrixExamples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BC3357E1971B039009C49C5 /* Debug */,
+				5BC3357F1971B039009C49C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BC335801971B039009C49C5 /* Build configuration list for PBXNativeTarget "VBMathMatrixExamplesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BC335811971B039009C49C5 /* Debug */,
+				5BC335821971B039009C49C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5BC335491971B039009C49C5 /* Project object */;
+}

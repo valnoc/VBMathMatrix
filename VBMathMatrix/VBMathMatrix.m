@@ -80,5 +80,17 @@
     return self;
 }
 
+- (instancetype) initWithRowsCount:(NSInteger)rowsCount
+                      columnsCount:(NSInteger)columnsCount {
+    NSMutableArray* values = [NSMutableArray new];
+    for (NSInteger row = 0; row < rowsCount; row++) {
+        NSMutableArray* rowValues = [NSMutableArray new];
+        for (NSInteger column = 0; column < columnsCount; column++) {
+            [rowValues addObject:@(0)];
+        }
+        [values addObject:rowValues];
+    }
+    return [self initWIthValues:values];
+}
 
 @end

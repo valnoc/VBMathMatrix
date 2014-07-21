@@ -20,6 +20,9 @@
 		5BC335781971B039009C49C5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BC335761971B039009C49C5 /* InfoPlist.strings */; };
 		5BC3357A1971B039009C49C5 /* VBMathMatrixExamplesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC335791971B039009C49C5 /* VBMathMatrixExamplesTests.m */; };
 		5BE12E3B1971B0F2004EC648 /* VBMathMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE12E3A1971B0F2004EC648 /* VBMathMatrix.m */; };
+		5BE67553197D9C3500FE751E /* VBInvalidClassException.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE67552197D9C3500FE751E /* VBInvalidClassException.m */; };
+		5BE67559197DA25D00FE751E /* VBZeroDimensionMatrixException.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE67558197DA25D00FE751E /* VBZeroDimensionMatrixException.m */; };
+		5BE67562197DA5EB00FE751E /* VBInvalidColumnsCountException.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE67561197DA5EB00FE751E /* VBInvalidColumnsCountException.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,12 @@
 		5BC335791971B039009C49C5 /* VBMathMatrixExamplesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VBMathMatrixExamplesTests.m; sourceTree = "<group>"; };
 		5BE12E391971B0F2004EC648 /* VBMathMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBMathMatrix.h; sourceTree = "<group>"; };
 		5BE12E3A1971B0F2004EC648 /* VBMathMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBMathMatrix.m; sourceTree = "<group>"; };
+		5BE67551197D9C3500FE751E /* VBInvalidClassException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBInvalidClassException.h; sourceTree = "<group>"; };
+		5BE67552197D9C3500FE751E /* VBInvalidClassException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBInvalidClassException.m; sourceTree = "<group>"; };
+		5BE67557197DA25D00FE751E /* VBZeroDimensionMatrixException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBZeroDimensionMatrixException.h; sourceTree = "<group>"; };
+		5BE67558197DA25D00FE751E /* VBZeroDimensionMatrixException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBZeroDimensionMatrixException.m; sourceTree = "<group>"; };
+		5BE67560197DA5EB00FE751E /* VBInvalidColumnsCountException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBInvalidColumnsCountException.h; sourceTree = "<group>"; };
+		5BE67561197DA5EB00FE751E /* VBInvalidColumnsCountException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBInvalidColumnsCountException.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +162,12 @@
 			children = (
 				5BE12E391971B0F2004EC648 /* VBMathMatrix.h */,
 				5BE12E3A1971B0F2004EC648 /* VBMathMatrix.m */,
+				5BE67551197D9C3500FE751E /* VBInvalidClassException.h */,
+				5BE67552197D9C3500FE751E /* VBInvalidClassException.m */,
+				5BE67557197DA25D00FE751E /* VBZeroDimensionMatrixException.h */,
+				5BE67558197DA25D00FE751E /* VBZeroDimensionMatrixException.m */,
+				5BE67560197DA5EB00FE751E /* VBInvalidColumnsCountException.h */,
+				5BE67561197DA5EB00FE751E /* VBInvalidColumnsCountException.m */,
 			);
 			path = VBMathMatrix;
 			sourceTree = "<group>";
@@ -253,8 +268,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BE67553197D9C3500FE751E /* VBInvalidClassException.m in Sources */,
+				5BE67559197DA25D00FE751E /* VBZeroDimensionMatrixException.m in Sources */,
 				5BE12E3B1971B0F2004EC648 /* VBMathMatrix.m in Sources */,
 				5BC335651971B039009C49C5 /* VBAppDelegate.m in Sources */,
+				5BE67562197DA5EB00FE751E /* VBInvalidColumnsCountException.m in Sources */,
 				5BC335611971B039009C49C5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

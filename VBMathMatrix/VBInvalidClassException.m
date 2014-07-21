@@ -22,8 +22,16 @@
 //    SOFTWARE.
 //
 
-#import "VBMathMatrix.h"
+#import "VBInvalidClassException.h"
 
-@implementation VBMathMatrix
+@implementation VBInvalidClassException
+
++ (instancetype) exceptionWithUsedClass:(Class)usedClass
+                          expectedClass:(Class)expectedClass{
+
+    return [[self alloc] initWithName:NSStringFromClass(self)
+                               reason:[NSString stringWithFormat:@"Expected object of %@ class instead of %@ class", usedClass, expectedClass]
+                             userInfo:nil];
+}
 
 @end

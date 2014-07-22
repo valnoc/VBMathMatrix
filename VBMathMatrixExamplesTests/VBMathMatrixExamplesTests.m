@@ -8,6 +8,10 @@
 
 #import <XCTest/XCTest.h>
 
+#import "VBMathMatrix.h"
+#import "VBInvalidClassException.h"
+#import "VBZeroDimensionMatrixException.h"
+
 @interface VBMathMatrixExamplesTests : XCTestCase
 
 @end
@@ -26,9 +30,12 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testInit
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    XCTAssertThrowsSpecific([VBMathMatrix matrixWIthValues:nil], VBInvalidClassException, @"Nil array of values wasn't detected");
+    XCTAssertThrowsSpecific([VBMathMatrix matrixWIthValues:@[@(1)]], VBInvalidClassException, @"Nil array of values wasn't detected");
+    XCTAssertThrowsSpecific([VBMathMatrix matrixWIthValues:@[@[@"s"]]], VBInvalidClassException, @"Nil array of values wasn't detected");
+    XCTAssertThrowsSpecific([VBMathMatrix matrixWIthValues:@[@[@"s"]]], VBInvalidClassException, @"Nil array of values wasn't detected");
 }
 
 @end

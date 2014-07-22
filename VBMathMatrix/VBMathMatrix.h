@@ -26,4 +26,8 @@
 
 @interface VBMathMatrix : NSObject
 
++ (instancetype) matrixWIthValues:(NSArray*)values;
++ (instancetype) matrixWithRowsCount:(NSInteger)rowsCount
+                        columnsCount:(NSInteger)columnsCount;
+
 @end

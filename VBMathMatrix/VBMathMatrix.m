@@ -39,6 +39,9 @@
 
 @implementation VBMathMatrix
 
++ (instancetype) matrixWIthValues:(NSArray*)values {
+    return [[self alloc] initWIthValues:values];
+}
 - (instancetype) initWIthValues:(NSArray*)values {
     self = [super init];
     if (self) {
@@ -80,6 +83,11 @@
     return self;
 }
 
++ (instancetype) matrixWithRowsCount:(NSInteger)rowsCount
+                        columnsCount:(NSInteger)columnsCount {
+    return [[self alloc] initWithRowsCount:rowsCount
+                              columnsCount:columnsCount];
+}
 - (instancetype) initWithRowsCount:(NSInteger)rowsCount
                       columnsCount:(NSInteger)columnsCount {
     NSMutableArray* values = [NSMutableArray new];

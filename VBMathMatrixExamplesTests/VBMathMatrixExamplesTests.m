@@ -61,4 +61,15 @@
     XCTAssertThrowsSpecific(mtrx[0] = @"as", VBInvalidClassException, @"");
 }
 
+- (void) testEquality {
+    VBMathMatrix* a = [VBMathMatrix matrixWithValues:@[@[@(1), @(2)],
+                                                       @[@(3), @(4)]]];
+    VBMathMatrix* b = [VBMathMatrix matrixWithValues:@[@[@(1), @(2)],
+                                                       @[@(3), @(4)]]];
+    XCTAssert([a isEqualToMatrix:b] == YES, @"");
+    
+    b[0][0] = @(14);
+    XCTAssert([a isEqualToMatrix:b] == NO, @"");
+}
+
 @end

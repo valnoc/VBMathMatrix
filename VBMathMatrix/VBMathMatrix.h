@@ -30,6 +30,9 @@
 + (instancetype) matrixWithRowsCount:(NSInteger)rowsCount
                         columnsCount:(NSInteger)columnsCount;
 
+#pragma mark - equality
+- (BOOL) isEqualToMatrix:(VBMathMatrix*)matrix;
+
 #pragma mark - subscripting
 - (id) objectAtIndexedSubscript:(NSUInteger)index;
 - (void)setObject:(id)anObject atIndexedSubscript:(NSUInteger)idx;

@@ -105,7 +105,21 @@
 }
 
 #pragma mark - equality
-
+- (BOOL) isEqual:(id)object {
+    return [object isKindOfClass:[VBMathMatrix class]] ? [self isEqualToMatrix:object] : [super isEqual:object];
+}
+- (BOOL) isEqualToMatrix:(VBMathMatrix*)matrix {
+    BOOL eq = YES;
+    for (NSInteger r = 0; r < self.rowsCount; r++) {
+        for (NSInteger c = 0; c < self.columnsCount; c++) {
+            if ([self[r][c] isEqualToNumber:matrix[r][c]] == NO) {
+                eq = NO;
+                break;
+            }
+        }
+    }
+    return eq;
+}
 
 #pragma mark - subscripting
 - (id) objectAtIndexedSubscript:(NSUInteger)index {

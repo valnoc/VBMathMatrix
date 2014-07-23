@@ -30,7 +30,7 @@
                              expectedCount:(NSInteger)expectedCount{
     
     return [[self alloc] initWithName:NSStringFromClass(self)
-                               reason:[NSString stringWithFormat:@"Expected row to contain %@ columns; got %@ columns", @(columnsCount), @(expectedCount)]
+                               reason:[NSString stringWithFormat:@"%@: Expected row to contain %@ columns; got %@ columns", NSStringFromClass(self.class), @(columnsCount), @(expectedCount)]
                              userInfo:nil];
 }
 

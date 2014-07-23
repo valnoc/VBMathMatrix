@@ -11,6 +11,7 @@
 #import "VBMathMatrix.h"
 #import "VBInvalidClassException.h"
 #import "VBZeroDimensionMatrixException.h"
+#import "VBInvalidColumnsCountException.h"
 
 @interface VBMathMatrixExamplesTests : XCTestCase
 
@@ -32,10 +33,25 @@
 
 - (void)testInit
 {
-    XCTAssertThrowsSpecific([VBMathMatrix matrixWIthValues:nil], VBInvalidClassException, @"Nil array of values wasn't detected");
-    XCTAssertThrowsSpecific([VBMathMatrix matrixWIthValues:@[@(1)]], VBInvalidClassException, @"Nil array of values wasn't detected");
-    XCTAssertThrowsSpecific([VBMathMatrix matrixWIthValues:@[@[@"s"]]], VBInvalidClassException, @"Nil array of values wasn't detected");
-    XCTAssertThrowsSpecific([VBMathMatrix matrixWIthValues:@[@[@"s"]]], VBInvalidClassException, @"Nil array of values wasn't detected");
+    XCTAssertThrowsSpecific([VBMathMatrix matrixWithValues:nil], VBInvalidClassException, @"");
+    XCTAssertThrowsSpecific([VBMathMatrix matrixWithValues:@[@(1)]], VBInvalidClassException, @"");
+    XCTAssertThrowsSpecific([VBMathMatrix matrixWithValues:@[@[@"s"]]], VBInvalidClassException, @"");
+
+    NSArray* values = @[@[@(1)], @(1)];
+    XCTAssertThrowsSpecific([VBMathMatrix matrixWithValues:values], VBInvalidClassException, @"");
+
+    XCTAssertThrowsSpecific([VBMathMatrix matrixWithValues:@[]], VBZeroDimensionMatrixException, @"");
+    
+    values = @[@[@(1), @(2)],
+               @[@(1)]];
+    XCTAssertThrowsSpecific([VBMathMatrix matrixWithValues:values], VBInvalidColumnsCountException, @"");
+
+    values = @[@[@(1), @(2)],
+               @[@(2), @(3)]];
+    XCTAssertNoThrow([VBMathMatrix matrixWithValues:values], @"");
+    
+    XCTAssertNoThrow([VBMathMatrix matrixWithRowsCount:3
+                                          columnsCount:3], @"");
 }
 
 @end

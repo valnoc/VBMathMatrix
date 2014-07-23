@@ -39,10 +39,10 @@
 
 @implementation VBMathMatrix
 
-+ (instancetype) matrixWIthValues:(NSArray*)values {
-    return [[self alloc] initWIthValues:values];
++ (instancetype) matrixWithValues:(NSArray*)values {
+    return [[self alloc] initWithValues:values];
 }
-- (instancetype) initWIthValues:(NSArray*)values {
+- (instancetype) initWithValues:(NSArray*)values {
     self = [super init];
     if (self) {
         if (values == nil || [values isKindOfClass:[NSNull class]]) {
@@ -98,7 +98,7 @@
         }
         [values addObject:rowValues];
     }
-    return [self initWIthValues:values];
+    return [self initWithValues:values];
 }
 
 @end

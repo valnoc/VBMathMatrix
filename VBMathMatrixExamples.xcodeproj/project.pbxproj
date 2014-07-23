@@ -51,9 +51,9 @@
 		5BC3356D1971B039009C49C5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5BC335751971B039009C49C5 /* VBMathMatrixExamplesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VBMathMatrixExamplesTests-Info.plist"; sourceTree = "<group>"; };
 		5BC335771971B039009C49C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5BC335791971B039009C49C5 /* VBMathMatrixExamplesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VBMathMatrixExamplesTests.m; sourceTree = "<group>"; };
-		5BE12E391971B0F2004EC648 /* VBMathMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBMathMatrix.h; sourceTree = "<group>"; };
-		5BE12E3A1971B0F2004EC648 /* VBMathMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBMathMatrix.m; sourceTree = "<group>"; };
+		5BC335791971B039009C49C5 /* VBMathMatrixExamplesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = VBMathMatrixExamplesTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		5BE12E391971B0F2004EC648 /* VBMathMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = VBMathMatrix.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		5BE12E3A1971B0F2004EC648 /* VBMathMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = VBMathMatrix.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5BE67551197D9C3500FE751E /* VBInvalidClassException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBInvalidClassException.h; sourceTree = "<group>"; };
 		5BE67552197D9C3500FE751E /* VBInvalidClassException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBInvalidClassException.m; sourceTree = "<group>"; };
 		5BE67557197DA25D00FE751E /* VBZeroDimensionMatrixException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBZeroDimensionMatrixException.h; sourceTree = "<group>"; };

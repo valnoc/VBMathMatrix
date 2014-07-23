@@ -28,7 +28,7 @@
 
 + (instancetype) exception {
     return [[self alloc] initWithName:NSStringFromClass(self)
-                               reason:@"Minimum matrix size is 1x1"
+                               reason:[NSString stringWithFormat:@"%@: Minimum matrix size is 1x1", NSStringFromClass(self.class)]
                              userInfo:nil];
 }
 

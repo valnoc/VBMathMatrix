@@ -59,6 +59,12 @@
     XCTAssertNoThrow(mtrx[0][0] = @(1), @"");
     
     XCTAssertThrowsSpecific(mtrx[0] = @"as", VBInvalidClassException, @"");
+
+    values = @[@(1), @(2), @(3)];
+    XCTAssertNoThrow(mtrx[0] = values, @"");
+    
+    values = @[@(1), @(2)];
+    XCTAssertThrowsSpecific(mtrx[0] = values, VBInvalidColumnsCountException, @"");
 }
 
 - (void) testEquality {

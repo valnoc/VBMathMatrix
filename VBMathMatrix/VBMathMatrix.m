@@ -131,6 +131,10 @@
         @throw [VBInvalidClassException exceptionWithUsedClass:[obj class]
                                                  expectedClass:[NSNumber class]];
     }
+    if ([obj count] != self.columnsCount) {
+        @throw [VBInvalidColumnsCountException exceptionWithColumnsCount:[obj count]
+                                                           expectedCount:self.columnsCount];
+    }
     self.values[idx] = obj;
 }
 

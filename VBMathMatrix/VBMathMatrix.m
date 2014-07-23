@@ -113,7 +113,7 @@
 }
 
 - (void) setObject:(id)obj atIndexedSubscript:(NSUInteger)idx {
-    if ([obj isKindOfClass:[NSNumber class]] == NO) {
+    if ([obj isKindOfClass:[NSArray class]] == NO) {
         @throw [VBInvalidClassException exceptionWithUsedClass:[obj class]
                                                  expectedClass:[NSNumber class]];
     }

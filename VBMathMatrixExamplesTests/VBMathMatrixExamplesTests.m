@@ -52,6 +52,13 @@
     
     XCTAssertNoThrow([VBMathMatrix matrixWithRowsCount:3
                                           columnsCount:3], @"");
+    
+    VBMathMatrix* mtrx = [VBMathMatrix matrixWithRowsCount:3
+                                              columnsCount:3];
+    XCTAssertNoThrow(mtrx[0][0], @"");
+    XCTAssertNoThrow(mtrx[0][0] = @(1), @"");
+    
+    XCTAssertThrowsSpecific(mtrx[0] = @"as", VBInvalidClassException, @"");
 }
 
 @end

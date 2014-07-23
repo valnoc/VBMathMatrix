@@ -8,14 +8,21 @@
 
 #import "VBAppDelegate.h"
 
+#import "VBMathMatrix.h"
+
 @implementation VBAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    VBMathMatrix* mtrx = [VBMathMatrix matrixWithValues:@[@[@(1), @(2)]]];
+    NSLog(@"%@", mtrx[0][1]);
+    mtrx[0][1] = @(3);
+    NSLog(@"%@", mtrx[0][1]);
+    
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    // Override point for customization after application launch.
+//    self.window.backgroundColor = [UIColor whiteColor];
+//    [self.window makeKeyAndVisible];
     return YES;
 }
 

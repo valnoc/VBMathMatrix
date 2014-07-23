@@ -78,7 +78,10 @@
         }
         
         //  everything is ok
-        self.values = [NSMutableArray arrayWithArray:values];
+        self.values = [NSMutableArray new];
+        for (NSInteger i = 0; i < values.count; i++) {
+            [self.values addObject:[NSMutableArray arrayWithArray:values[i]]];
+        }
     }
     return self;
 }
@@ -99,6 +102,15 @@
         [values addObject:rowValues];
     }
     return [self initWithValues:values];
+}
+
+#pragma mark - subscripting
+- (id) objectAtIndexedSubscript:(NSUInteger)index {
+    return self.values[index];
+}
+
+- (void)setObject:(id)anObject atIndexedSubscript:(NSUInteger)idx {
+    self.values[idx] = anObject;
 }
 
 @end

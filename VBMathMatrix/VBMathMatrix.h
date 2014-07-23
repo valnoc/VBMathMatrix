@@ -30,4 +30,7 @@
 + (instancetype) matrixWithRowsCount:(NSInteger)rowsCount
                         columnsCount:(NSInteger)columnsCount;
 
+- (id) objectAtIndexedSubscript:(NSUInteger)index;
+- (void)setObject:(id)anObject atIndexedSubscript:(NSUInteger)idx;
+
 @end

@@ -104,13 +104,20 @@
     return [self initWithValues:values];
 }
 
+#pragma mark - equality
+
+
 #pragma mark - subscripting
 - (id) objectAtIndexedSubscript:(NSUInteger)index {
     return self.values[index];
 }
 
-- (void)setObject:(id)anObject atIndexedSubscript:(NSUInteger)idx {
-    self.values[idx] = anObject;
+- (void) setObject:(id)obj atIndexedSubscript:(NSUInteger)idx {
+    if ([obj isKindOfClass:[NSNumber class]] == NO) {
+        @throw [VBInvalidClassException exceptionWithUsedClass:[obj class]
+                                                 expectedClass:[NSNumber class]];
+    }
+    self.values[idx] = obj;
 }
 
 @end

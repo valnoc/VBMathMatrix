@@ -30,6 +30,7 @@
 + (instancetype) matrixWithRowsCount:(NSInteger)rowsCount
                         columnsCount:(NSInteger)columnsCount;
 
+#pragma mark - subscripting
 - (id) objectAtIndexedSubscript:(NSUInteger)index;
 - (void)setObject:(id)anObject atIndexedSubscript:(NSUInteger)idx;
 

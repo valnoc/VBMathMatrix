@@ -36,9 +36,15 @@
 #pragma mark - operations
 - (VBMathMatrix*) matrixByAddingMatrix:(VBMathMatrix*)matrix;
 - (VBMathMatrix*) matrixByScalarMultiplication:(double)scalar;
+- (VBMathMatrix*) matrixBySubstractingMatrix:(VBMathMatrix*)matrix;
+- (VBMathMatrix*) matrixByScalarDivision:(double)scalar;
+- (VBMathMatrix*) matrixByTransposition;
 
 - (void) addMatrix:(VBMathMatrix*)matrix;
 - (void) multiplyByScalar:(double)scalar;
+- (void) substractMatrix:(VBMathMatrix*)matrix;
+- (void) divideByScalar:(double)scalar;
+- (void) transpose;
 
 #pragma mark - subscripting
 - (id) objectAtIndexedSubscript:(NSUInteger)index;

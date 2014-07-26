@@ -144,6 +144,11 @@
     [result divideByScalar:scalar];
     return result;
 }
+- (VBMathMatrix*) matrixByTransposition {
+    VBMathMatrix* result = [VBMathMatrix matrixWithValues:self.values];
+    [result transpose];
+    return result;
+}
 
 - (void) addMatrix:(VBMathMatrix*)matrix {
     if (self.rowsCount != matrix.rowsCount && self.columnsCount != matrix.columnsCount) {
@@ -174,6 +179,27 @@
 }
 - (void) divideByScalar:(double)scalar {
     [self multiplyByScalar:1.0f / scalar];
+}
+- (void) transpose {
+    NSInteger tmp = self.rowsCount;
+    self.rowsCount = self.columnsCount;
+    self.columnsCount = tmp;
+    
+    NSArray* oldValues = [NSArray arrayWithArray:self.values];
+    [self.values removeAllObjects];
+    
+    for (NSInteger row = 0; row < self.rowsCount; row++) {
+        [self.values addObject:[NSMutableArray new]];
+        for (NSInteger col = 0; col < self.columnsCount; col++) {
+            [self.values[row] addObject:[NSNull null]];
+        }
+    }
+    
+    for (NSInteger row = 0; row < self.rowsCount; row++) {
+        for (NSInteger col = 0; col < self.columnsCount; col++) {
+            self[row][col] = oldValues[col][row];
+        }
+    }
 }
 
 #pragma mark - subscripting

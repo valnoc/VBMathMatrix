@@ -27,11 +27,13 @@
 #import "VBInvalidClassException.h"
 #import "VBZeroDimensionMatrixException.h"
 #import "VBInvalidColumnsCountException.h"
+#import "VBInvalidMatrixDimensionException.h"
 
 @interface VBMathMatrix ()
 
 @property (nonatomic, strong) NSMutableArray* values;
 
+#warning TODO make readonly
 @property (nonatomic, assign) NSInteger rowsCount;
 @property (nonatomic, assign) NSInteger columnsCount;
 
@@ -121,12 +123,53 @@
     return eq;
 }
 
+#pragma mark - operations
+- (VBMathMatrix*) matrixByAddingMatrix:(VBMathMatrix*)matrix {
+    VBMathMatrix* result = [VBMathMatrix matrixWithValues:self.values];
+    [result addMatrix:matrix];
+    return result;
+}
+- (VBMathMatrix*) matrixByScalarMultiplication:(double)scalar {
+    VBMathMatrix* result = [VBMathMatrix matrixWithValues:self.values];
+    [result multiplyByScalar:scalar];
+    return result;
+}
+
+- (void) addMatrix:(VBMathMatrix*)matrix {
+    if (self.rowsCount != matrix.rowsCount && self.columnsCount != matrix.columnsCount) {
+        @throw [VBInvalidMatrixDimensionException exceptionWithRowsCount:matrix.rowsCount
+                                                            columnsCount:matrix.columnsCount
+                                                       expectedRowsCount:self.rowsCount
+                                                    expectedColumnsCount:self.columnsCount];
+    }
+    
+    for (NSInteger row = 0; row < self.rowsCount; row++) {
+        for (NSInteger col = 0; col < self.columnsCount; col++) {
+            double a = [self[row][col] doubleValue];
+            double b = [matrix[row][col] doubleValue];
+            self[row][col] = @(a + b);
+        }
+    }
+}
+
+- (void) multiplyByScalar:(double)scalar {
+    for (NSInteger row = 0; row < self.rowsCount; row++) {
+        for (NSInteger col = 0; col < self.columnsCount; col++) {
+            double a = [self[row][col] doubleValue];
+            self[row][col] = @(a * scalar);
+        }
+    }
+}
+
+
 #pragma mark - subscripting
 - (id) objectAtIndexedSubscript:(NSUInteger)index {
     return self.values[index];
 }
 
 - (void) setObject:(id)obj atIndexedSubscript:(NSUInteger)idx {
+#warning TODO check nil
+#warning TODO check nil
     if ([obj isKindOfClass:[NSArray class]] == NO) {
         @throw [VBInvalidClassException exceptionWithUsedClass:[obj class]
                                                  expectedClass:[NSNumber class]];

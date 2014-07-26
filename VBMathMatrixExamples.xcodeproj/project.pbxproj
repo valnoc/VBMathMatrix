@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B057D7A1983C5D700AD1873 /* VBInvalidMatrixDimensionException.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B057D791983C5D700AD1873 /* VBInvalidMatrixDimensionException.m */; };
 		5BC335551971B039009C49C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC335541971B039009C49C5 /* Foundation.framework */; };
 		5BC335571971B039009C49C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC335561971B039009C49C5 /* CoreGraphics.framework */; };
 		5BC335591971B039009C49C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC335581971B039009C49C5 /* UIKit.framework */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B057D781983C5D700AD1873 /* VBInvalidMatrixDimensionException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBInvalidMatrixDimensionException.h; sourceTree = "<group>"; };
+		5B057D791983C5D700AD1873 /* VBInvalidMatrixDimensionException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBInvalidMatrixDimensionException.m; sourceTree = "<group>"; };
 		5BC335511971B039009C49C5 /* VBMathMatrixExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VBMathMatrixExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC335541971B039009C49C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5BC335561971B039009C49C5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -168,6 +171,8 @@
 				5BE67558197DA25D00FE751E /* VBZeroDimensionMatrixException.m */,
 				5BE67560197DA5EB00FE751E /* VBInvalidColumnsCountException.h */,
 				5BE67561197DA5EB00FE751E /* VBInvalidColumnsCountException.m */,
+				5B057D781983C5D700AD1873 /* VBInvalidMatrixDimensionException.h */,
+				5B057D791983C5D700AD1873 /* VBInvalidMatrixDimensionException.m */,
 			);
 			path = VBMathMatrix;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 				5BC335651971B039009C49C5 /* VBAppDelegate.m in Sources */,
 				5BE67562197DA5EB00FE751E /* VBInvalidColumnsCountException.m in Sources */,
 				5BC335611971B039009C49C5 /* main.m in Sources */,
+				5B057D7A1983C5D700AD1873 /* VBInvalidMatrixDimensionException.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

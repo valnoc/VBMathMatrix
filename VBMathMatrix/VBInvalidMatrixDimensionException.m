@@ -22,26 +22,18 @@
 //    SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
+#import "VBInvalidMatrixDimensionException.h"
 
-@interface VBMathMatrix : NSObject
+@implementation VBInvalidMatrixDimensionException
 
-+ (instancetype) matrixWithValues:(NSArray*)values;
-+ (instancetype) matrixWithRowsCount:(NSInteger)rowsCount
-                        columnsCount:(NSInteger)columnsCount;
-
-#pragma mark - equality
-- (BOOL) isEqualToMatrix:(VBMathMatrix*)matrix;
-
-#pragma mark - operations
-- (VBMathMatrix*) matrixByAddingMatrix:(VBMathMatrix*)matrix;
-- (VBMathMatrix*) matrixByScalarMultiplication:(double)scalar;
-
-- (void) addMatrix:(VBMathMatrix*)matrix;
-- (void) multiplyByScalar:(double)scalar;
-
-#pragma mark - subscripting
-- (id) objectAtIndexedSubscript:(NSUInteger)index;
-- (void)setObject:(id)anObject atIndexedSubscript:(NSUInteger)idx;
++ (instancetype) exceptionWithRowsCount:(NSInteger)rowsCount
+                           columnsCount:(NSInteger)columnsCount
+                      expectedRowsCount:(NSInteger)expectedRowsCount
+                   expectedColumnsCount:(NSInteger)expectedColumnsCount {
+   
+    return [[self alloc] initWithName:NSStringFromClass(self)
+                               reason:[NSString stringWithFormat:@"%@: Expected matrix %@x%@, got %@x%@", NSStringFromClass(self.class), @(rowsCount), @(columnsCount), @(expectedRowsCount), @(expectedColumnsCount)]
+                             userInfo:nil];
+}
 
 @end

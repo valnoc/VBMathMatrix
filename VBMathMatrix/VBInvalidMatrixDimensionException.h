@@ -24,24 +24,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface VBMathMatrix : NSObject
+@interface VBInvalidMatrixDimensionException : NSException
 
-+ (instancetype) matrixWithValues:(NSArray*)values;
-+ (instancetype) matrixWithRowsCount:(NSInteger)rowsCount
-                        columnsCount:(NSInteger)columnsCount;
-
-#pragma mark - equality
-- (BOOL) isEqualToMatrix:(VBMathMatrix*)matrix;
-
-#pragma mark - operations
-- (VBMathMatrix*) matrixByAddingMatrix:(VBMathMatrix*)matrix;
-- (VBMathMatrix*) matrixByScalarMultiplication:(double)scalar;
-
-- (void) addMatrix:(VBMathMatrix*)matrix;
-- (void) multiplyByScalar:(double)scalar;
-
-#pragma mark - subscripting
-- (id) objectAtIndexedSubscript:(NSUInteger)index;
-- (void)setObject:(id)anObject atIndexedSubscript:(NSUInteger)idx;
++ (instancetype) exceptionWithRowsCount:(NSInteger)rowsCount
+                           columnsCount:(NSInteger)columnsCount
+                      expectedRowsCount:(NSInteger)expectedRowsCount
+                   expectedColumnsCount:(NSInteger)expectedColumnsCount;
 
 @end

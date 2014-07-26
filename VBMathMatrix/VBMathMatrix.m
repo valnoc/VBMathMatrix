@@ -134,6 +134,11 @@
     [result multiplyByScalar:scalar];
     return result;
 }
+- (VBMathMatrix*) matrixBySubstractingMatrix:(VBMathMatrix*)matrix {
+    VBMathMatrix* result = [VBMathMatrix matrixWithValues:self.values];
+    [result substractMatrix:matrix];
+    return result;
+}
 
 - (void) addMatrix:(VBMathMatrix*)matrix {
     if (self.rowsCount != matrix.rowsCount && self.columnsCount != matrix.columnsCount) {
@@ -151,7 +156,6 @@
         }
     }
 }
-
 - (void) multiplyByScalar:(double)scalar {
     for (NSInteger row = 0; row < self.rowsCount; row++) {
         for (NSInteger col = 0; col < self.columnsCount; col++) {
@@ -159,6 +163,9 @@
             self[row][col] = @(a * scalar);
         }
     }
+}
+- (void) substractMatrix:(VBMathMatrix*)matrix {
+    [self addMatrix:[matrix matrixByScalarMultiplication:-1]];
 }
 
 

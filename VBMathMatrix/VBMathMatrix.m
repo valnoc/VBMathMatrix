@@ -139,6 +139,11 @@
     [result substractMatrix:matrix];
     return result;
 }
+- (VBMathMatrix*) matrixByScalarDivision:(double)scalar {
+    VBMathMatrix* result = [VBMathMatrix matrixWithValues:self.values];
+    [result divideByScalar:scalar];
+    return result;
+}
 
 - (void) addMatrix:(VBMathMatrix*)matrix {
     if (self.rowsCount != matrix.rowsCount && self.columnsCount != matrix.columnsCount) {
@@ -167,7 +172,9 @@
 - (void) substractMatrix:(VBMathMatrix*)matrix {
     [self addMatrix:[matrix matrixByScalarMultiplication:-1]];
 }
-
+- (void) divideByScalar:(double)scalar {
+    [self multiplyByScalar:1.0f / scalar];
+}
 
 #pragma mark - subscripting
 - (id) objectAtIndexedSubscript:(NSUInteger)index {

@@ -78,4 +78,48 @@
     XCTAssert([a isEqualToMatrix:b] == NO, @"");
 }
 
+- (void) testOperations {
+    VBMathMatrix* a = [VBMathMatrix matrixWithValues:@[@[@(1), @(2), @(3)],
+                                                       @[@(4), @(5), @(6)]]];
+    VBMathMatrix* b = [VBMathMatrix matrixWithValues:@[@[@(1), @(4)],
+                                                       @[@(2), @(5)],
+                                                       @[@(3), @(6)]]];
+    XCTAssert([[a matrixByTransposition] isEqualToMatrix:b], @"");
+    
+    a = [VBMathMatrix matrixWithValues:@[@[@(1), @(2), @(3)],
+                                         @[@(4), @(5), @(6)]]];
+    b = [VBMathMatrix matrixWithValues:@[@[@(3), @(4), @(5)],
+                                         @[@(2), @(5), @(8)]]];
+    VBMathMatrix* c = [VBMathMatrix matrixWithValues:@[@[@(4), @(6), @(8)],
+                                                       @[@(6), @(10), @(14)]]];
+    XCTAssert([[a matrixByAddingMatrix:b] isEqualToMatrix:c], @"");
+    
+    a = [VBMathMatrix matrixWithValues:@[@[@(1)],
+                                         @[@(2)],
+                                         @[@(3)]]];
+    b = [VBMathMatrix matrixWithValues:@[@[@(8)],
+                                         @[@(20)],
+                                         @[@(-6)]]];
+    c = [VBMathMatrix matrixWithValues:@[@[@(-7)],
+                                         @[@(-18)],
+                                         @[@(9)]]];
+    XCTAssert([[a matrixBySubstractingMatrix:b] isEqualToMatrix:c], @"");
+    
+    a = [VBMathMatrix matrixWithValues:@[@[@(1), @(15), @(-3)],
+                                         @[@(2), @(9), @(11)],
+                                         @[@(3), @(-100), @(5)]]];
+    c = [VBMathMatrix matrixWithValues:@[@[@(2), @(30), @(-6)],
+                                         @[@(4), @(18), @(22)],
+                                         @[@(6), @(-200), @(10)]]];
+    XCTAssert([[a matrixByScalarMultiplication:2] isEqualToMatrix:c], @"");
+
+    a = [VBMathMatrix matrixWithValues:@[@[@(2), @(30), @(-6)],
+                                         @[@(4), @(18), @(22)],
+                                         @[@(6), @(-200), @(10)]]];
+    c = [VBMathMatrix matrixWithValues:@[@[@(1), @(15), @(-3)],
+                                         @[@(2), @(9), @(11)],
+                                         @[@(3), @(-100), @(5)]]];
+    XCTAssert([[a matrixByScalarDivision:2] isEqualToMatrix:c], @"");
+}
+
 @end

@@ -151,7 +151,7 @@
 }
 
 - (void) addMatrix:(VBMathMatrix*)matrix {
-    if (self.rowsCount != matrix.rowsCount && self.columnsCount != matrix.columnsCount) {
+    if (self.rowsCount != matrix.rowsCount || self.columnsCount != matrix.columnsCount) {
         @throw [VBInvalidMatrixDimensionException exceptionWithRowsCount:matrix.rowsCount
                                                             columnsCount:matrix.columnsCount
                                                        expectedRowsCount:self.rowsCount

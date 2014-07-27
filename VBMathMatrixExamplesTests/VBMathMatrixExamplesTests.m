@@ -12,6 +12,7 @@
 #import "VBInvalidClassException.h"
 #import "VBZeroDimensionMatrixException.h"
 #import "VBInvalidColumnsCountException.h"
+#import "VBInvalidMatrixDimensionException.h"
 
 @interface VBMathMatrixExamplesTests : XCTestCase
 
@@ -93,6 +94,11 @@
     VBMathMatrix* c = [VBMathMatrix matrixWithValues:@[@[@(4), @(6), @(8)],
                                                        @[@(6), @(10), @(14)]]];
     XCTAssert([[a matrixByAddingMatrix:b] isEqualToMatrix:c], @"");
+    
+    a = [VBMathMatrix matrixWithValues:@[@[@(1), @(2), @(3)],
+                                         @[@(4), @(5), @(6)]]];
+    b = [VBMathMatrix matrixWithValues:@[@[@(3), @(4), @(5)]]];
+    XCTAssertThrowsSpecific([a matrixByAddingMatrix:b], VBInvalidMatrixDimensionException, @"");
     
     a = [VBMathMatrix matrixWithValues:@[@[@(1)],
                                          @[@(2)],

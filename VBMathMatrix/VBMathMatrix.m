@@ -95,15 +95,8 @@
 }
 - (instancetype) initWithRowsCount:(NSInteger)rowsCount
                       columnsCount:(NSInteger)columnsCount {
-    NSMutableArray* values = [NSMutableArray new];
-    for (NSInteger row = 0; row < rowsCount; row++) {
-        NSMutableArray* rowValues = [NSMutableArray new];
-        for (NSInteger column = 0; column < columnsCount; column++) {
-            [rowValues addObject:@(0)];
-        }
-        [values addObject:rowValues];
-    }
-    return [self initWithValues:values];
+    return [self initWithValues:[self arrayWithRowsCount:rowsCount
+                                            columnsCount:columnsCount]];
 }
 
 #pragma mark - equality
@@ -201,7 +194,39 @@
         }
     }
 }
+- (void) multiplyRightByMatrix:(VBMathMatrix*)matrix {
+    if (self.columnsCount != matrix.rowsCount) {
+        @throw [VBInvalidMatrixDimensionException exceptionWithRowsCount:matrix.rowsCount
+                                                            columnsCount:matrix.columnsCount
+                                                       expectedRowsCount:self.columnsCount
+                                                    expectedColumnsCount:matrix.columnsCount];
+    }
+    // mxn, nxp
+    double m = self.rowsCount;
+    double n = self.columnsCount;
+    double p = matrix.columnsCount;
 
+    NSArray* oldValues = self.values;
+    
+    self.rowsCount = m;
+    self.columnsCount = p;
+    
+    [self.values removeAllObjects];
+    self.values = [self arrayWithRowsCount:self.rowsCount
+                              columnsCount:self.columnsCount];
+    
+    for (NSInteger row = 0; row < self.rowsCount; row++) {
+        for (NSInteger col = 0; col < self.columnsCount; col++) {
+            double sum = 0;
+            for (NSInteger i = 0; i < n; i++) {
+                double a = [oldValues[row][i] doubleValue];
+                double b = [matrix[i][col] doubleValue];
+                sum += a*b;
+            }
+            self[row][col] = @(sum);
+        }
+    }
+}
 #pragma mark - subscripting
 - (id) objectAtIndexedSubscript:(NSUInteger)index {
     return self.values[index];
@@ -219,6 +244,20 @@
                                                            expectedCount:self.columnsCount];
     }
     self.values[idx] = obj;
+}
+
+#pragma mark - helpers
+- (NSMutableArray*) arrayWithRowsCount:(NSInteger)rowsCount
+                          columnsCount:(NSInteger)columnsCount {
+    NSMutableArray* values = [NSMutableArray new];
+    for (NSInteger row = 0; row < rowsCount; row++) {
+        NSMutableArray* rowValues = [NSMutableArray new];
+        for (NSInteger column = 0; column < columnsCount; column++) {
+            [rowValues addObject:@(0)];
+        }
+        [values addObject:rowValues];
+    }
+    return values;
 }
 
 @end

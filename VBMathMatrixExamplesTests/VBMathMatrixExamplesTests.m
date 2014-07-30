@@ -126,6 +126,22 @@
                                          @[@(2), @(9), @(11)],
                                          @[@(3), @(-100), @(5)]]];
     XCTAssert([[a matrixByScalarDivision:2] isEqualToMatrix:c], @"");
+    
+    a = [VBMathMatrix matrixWithValues:@[@[@(1), @(2), @(3)],
+                                         @[@(4), @(5), @(6)]]];
+    b = [VBMathMatrix matrixWithValues:@[@[@(10), @(11), @(12)],
+                                         @[@(13), @(14), @(15)],
+                                         @[@(16), @(17), @(18)]]];
+    c = [VBMathMatrix matrixWithValues:@[@[@(84), @(90), @(96)],
+                                         @[@(201), @(216), @(231)]]];
+    XCTAssert([[a matrixByRightMatrixMultiplication:b] isEqualToMatrix:c], @"");
+    
+    a = [VBMathMatrix matrixWithValues:@[@[@(1), @(2), @(3), @(0)],
+                                         @[@(4), @(5), @(6), @(0)]]];
+    b = [VBMathMatrix matrixWithValues:@[@[@(10), @(11), @(12)],
+                                         @[@(13), @(14), @(15)],
+                                         @[@(16), @(17), @(18)]]];
+    XCTAssertThrowsSpecific([a matrixByRightMatrixMultiplication:b], VBInvalidMatrixDimensionException, @"");
 }
 
 @end

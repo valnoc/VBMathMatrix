@@ -142,6 +142,11 @@
     [result transpose];
     return result;
 }
+- (VBMathMatrix*) matrixByRightMatrixMultiplication:(VBMathMatrix*)matrix {
+    VBMathMatrix* result = [VBMathMatrix matrixWithValues:self.values];
+    [result multiplyRightByMatrix:matrix];
+    return result;
+}
 
 - (void) addMatrix:(VBMathMatrix*)matrix {
     if (self.rowsCount != matrix.rowsCount || self.columnsCount != matrix.columnsCount) {
@@ -206,7 +211,7 @@
     double n = self.columnsCount;
     double p = matrix.columnsCount;
 
-    NSArray* oldValues = self.values;
+    NSArray* oldValues = [NSArray arrayWithArray:self.values];
     
     self.rowsCount = m;
     self.columnsCount = p;

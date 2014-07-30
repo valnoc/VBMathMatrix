@@ -39,6 +39,7 @@
 - (VBMathMatrix*) matrixBySubstractingMatrix:(VBMathMatrix*)matrix;
 - (VBMathMatrix*) matrixByScalarDivision:(double)scalar;
 - (VBMathMatrix*) matrixByTransposition;
+- (VBMathMatrix*) matrixByRightMatrixMultiplication:(VBMathMatrix*)matrix;
 
 - (void) addMatrix:(VBMathMatrix*)matrix;
 - (void) multiplyByScalar:(double)scalar;

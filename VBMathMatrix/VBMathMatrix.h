@@ -28,6 +28,9 @@
 
 @property (nonatomic, readonly, getter = isSquare) BOOL square;
 
+@property (nonatomic, assign, readonly) NSInteger rowsCount;
+@property (nonatomic, assign, readonly) NSInteger columnsCount;
+
 + (instancetype) matrixWithValues:(NSArray*)values;
 + (instancetype) matrixWithRowsCount:(NSInteger)rowsCount
                         columnsCount:(NSInteger)columnsCount;

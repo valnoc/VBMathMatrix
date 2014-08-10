@@ -33,10 +33,6 @@
 
 @property (nonatomic, strong) NSMutableArray* values;
 
-#warning TODO make readonly
-@property (nonatomic, assign) NSInteger rowsCount;
-@property (nonatomic, assign) NSInteger columnsCount;
-
 @end
 
 @implementation VBMathMatrix
@@ -70,8 +66,8 @@
         if (values.count == 0 || [values[0] count] == 0) {
             @throw [VBZeroDimensionMatrixException exception];
         }
-        self.rowsCount = values.count;
-        self.columnsCount = [values[0] count];
+        _rowsCount = values.count;
+        _columnsCount = [values[0] count];
         for (NSArray* row in values) {
             if (row.count != self.columnsCount) {
                 @throw [VBInvalidColumnsCountException exceptionWithColumnsCount:row.count
@@ -185,8 +181,8 @@
 }
 - (void) transpose {
     NSInteger tmp = self.rowsCount;
-    self.rowsCount = self.columnsCount;
-    self.columnsCount = tmp;
+    _rowsCount = self.columnsCount;
+    _columnsCount = tmp;
     
     NSArray* oldValues = [NSArray arrayWithArray:self.values];
     [self.values removeAllObjects];
@@ -218,8 +214,8 @@
 
     NSArray* oldValues = [NSArray arrayWithArray:self.values];
     
-    self.rowsCount = m;
-    self.columnsCount = p;
+    _rowsCount = m;
+    _columnsCount = p;
     
     [self.values removeAllObjects];
     self.values = [self arrayWithRowsCount:self.rowsCount

@@ -33,6 +33,7 @@ VBMathMatrix instance represents a mathematical matrix (numbers organized in row
 2. matrix addition, subsctraction, right multiplication, scalar multiplication/division
 3. transposition
 4. row addition, multiplication, switching
+5. submatrix creation
 
 ## Coming soon
 Feel free to left a feature request

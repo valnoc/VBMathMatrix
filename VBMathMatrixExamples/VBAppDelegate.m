@@ -14,10 +14,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    VBMathMatrix* mtrx = [VBMathMatrix matrixWithValues:@[@[@(1), @(2)]]];
-    NSLog(@"%@", mtrx[0][1]);
-    mtrx[0][1] = @(3);
-    NSLog(@"%@", mtrx[0][1]);
+    VBMathMatrix* a = [VBMathMatrix matrixWithValues:@[@[@(1), @(2), @(3)],
+                                                       @[@(4), @(5), @(6)]]];
+    VBMathMatrix* b = [VBMathMatrix matrixWithValues:@[@[@(1), @(4)],
+                                                       @[@(2), @(5)],
+                                                       @[@(3), @(6)]]];
+    
+    VBMathMatrix* c = [VBMathMatrix matrixWithRowsCount:3
+                                           columnsCount:3];
     
 //    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 //    // Override point for customization after application launch.

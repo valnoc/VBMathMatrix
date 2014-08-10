@@ -28,6 +28,8 @@
 #import "VBZeroDimensionMatrixException.h"
 #import "VBInvalidColumnsCountException.h"
 #import "VBInvalidMatrixDimensionException.h"
+#import "VBRowSelfAdditionException.h"
+#import "VBZeroMultiplicationException.h"
 
 @interface VBMathMatrix ()
 
@@ -233,6 +235,30 @@
         }
     }
 }
+
+#pragma mark - row operations
+- (void) modifyRowAtIndex:(NSUInteger)row1
+       byAddingRowAtIndex:(NSUInteger)row2 {
+    [self modifyRowAtIndex:row1
+        byAddingRowAtIndex:row2 
+        multipliedByScalar:1.0f];
+}
+
+- (void) modifyRowAtIndex:(NSUInteger)row1
+       byAddingRowAtIndex:(NSUInteger)row2
+       multipliedByScalar:(double)scalar {
+    
+    if (row1 == row2) {
+        @throw [VBRowSelfAdditionException exceptionWithRowIndex:row1];
+    }
+    if (scalar == 0.0f) {
+        @throw [VBZeroMultiplicationException exception];
+    }
+    for (NSInteger col = 0; col < self.columnsCount; col++) {
+        self[row1][col] = @([self[row1][col] doubleValue] + [self[row2][col] doubleValue] * scalar);
+    }
+}
+
 #pragma mark - subscripting
 - (id) objectAtIndexedSubscript:(NSUInteger)index {
     return self.values[index];

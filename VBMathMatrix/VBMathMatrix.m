@@ -99,6 +99,11 @@
                                             columnsCount:columnsCount]];
 }
 
+#pragma mark - props
+- (BOOL) isSquare {
+    return self.rowsCount == self.columnsCount;
+}
+
 #pragma mark - equality
 - (BOOL) isEqual:(id)object {
     return [object isKindOfClass:[VBMathMatrix class]] ? [self isEqualToMatrix:object] : [super isEqual:object];

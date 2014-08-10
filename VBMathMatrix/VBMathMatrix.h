@@ -26,6 +26,8 @@
 
 @interface VBMathMatrix : NSObject
 
+@property (nonatomic, readonly, getter = isSquare) BOOL square;
+
 + (instancetype) matrixWithValues:(NSArray*)values;
 + (instancetype) matrixWithRowsCount:(NSInteger)rowsCount
                         columnsCount:(NSInteger)columnsCount;

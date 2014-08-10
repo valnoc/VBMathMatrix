@@ -144,4 +144,19 @@
     XCTAssertThrowsSpecific([a matrixByRightMatrixMultiplication:b], VBInvalidMatrixDimensionException, @"");
 }
 
+- (void) testProps {
+    VBMathMatrix* a = [VBMathMatrix matrixWithValues:@[@[@(1), @(2), @(3)],
+                                                       @[@(4), @(5), @(6)]]];
+    XCTAssert(a.square == NO, @"");
+    
+    a = [VBMathMatrix matrixWithValues:@[@[@(1), @(4)],
+                                         @[@(2), @(5)],
+                                         @[@(3), @(6)]]];
+    XCTAssert(a.isSquare == NO, @"");
+    
+    a = [VBMathMatrix matrixWithValues:@[@[@(1), @(4), @(0)],
+                                         @[@(2), @(5), @(1)],
+                                         @[@(3), @(6), @(2)]]];
+    XCTAssert(a.isSquare == YES, @"");
+}
 @end

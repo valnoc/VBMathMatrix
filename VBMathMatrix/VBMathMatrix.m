@@ -237,13 +237,29 @@
 }
 
 #pragma mark - row operations
+- (VBMathMatrix*) matrixWithModifiedRowAtIndex:(NSUInteger)row1
+                            byAddingRowAtIndex:(NSUInteger)row2 {
+    VBMathMatrix* result = [VBMathMatrix matrixWithValues:self.values];
+    [result modifyRowAtIndex:row1
+          byAddingRowAtIndex:row2];
+    return result;
+}
+- (VBMathMatrix*) matrixWithModifiedRowAtIndex:(NSUInteger)row1
+                            byAddingRowAtIndex:(NSUInteger)row2
+                            multipliedByScalar:(double)scalar {
+    VBMathMatrix* result = [VBMathMatrix matrixWithValues:self.values];
+    [result modifyRowAtIndex:row1
+          byAddingRowAtIndex:row2
+          multipliedByScalar:scalar];
+    return result;
+}
+
 - (void) modifyRowAtIndex:(NSUInteger)row1
        byAddingRowAtIndex:(NSUInteger)row2 {
     [self modifyRowAtIndex:row1
         byAddingRowAtIndex:row2 
         multipliedByScalar:1.0f];
 }
-
 - (void) modifyRowAtIndex:(NSUInteger)row1
        byAddingRowAtIndex:(NSUInteger)row2
        multipliedByScalar:(double)scalar {

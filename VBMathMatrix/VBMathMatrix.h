@@ -52,6 +52,19 @@
 - (void) divideByScalar:(double)scalar;
 - (void) transpose;
 
+#pragma mark - row operations
+- (VBMathMatrix*) matrixWithModifiedRowAtIndex:(NSUInteger)row1
+                            byAddingRowAtIndex:(NSUInteger)row2;
+- (VBMathMatrix*) matrixWithModifiedRowAtIndex:(NSUInteger)row1
+                            byAddingRowAtIndex:(NSUInteger)row2
+                            multipliedByScalar:(double)scalar;
+
+- (void) modifyRowAtIndex:(NSUInteger)row1
+       byAddingRowAtIndex:(NSUInteger)row2;
+- (void) modifyRowAtIndex:(NSUInteger)row1
+       byAddingRowAtIndex:(NSUInteger)row2
+       multipliedByScalar:(double)scalar;
+
 #pragma mark - subscripting
 - (id) objectAtIndexedSubscript:(NSUInteger)index;
 - (void)setObject:(id)anObject atIndexedSubscript:(NSUInteger)idx;

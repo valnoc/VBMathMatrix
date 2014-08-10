@@ -198,4 +198,13 @@
     XCTAssert([[a matrixBySwitchingRowAtIndex:0 withRowAtIndex:1] isEqualToMatrix:b], @"");
 }
 
+- (void) testSubmatrix {
+    VBMathMatrix* a = [VBMathMatrix matrixWithValues:@[@[@(1), @(2), @(3)],
+                                                       @[@(4), @(5), @(6)],
+                                                       @[@(7), @(8), @(9)]]];
+    VBMathMatrix* b = [VBMathMatrix matrixWithValues:@[@[@(1), @(3)],
+                                                       @[@(7), @(9)]]];
+    XCTAssert([[a submatrixByDeletingRow:1 column:1] isEqualToMatrix:b], @"");
+}
+
 @end

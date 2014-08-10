@@ -73,6 +73,10 @@
 - (void) switchRowAtIndex:(NSUInteger)row1
            withRowAtIndex:(NSUInteger)row2;
 
+#pragma mark - submatrix
+- (VBMathMatrix*) submatrixByDeletingRow:(NSUInteger)row
+                                  column:(NSUInteger)column;
+
 #pragma mark - subscripting
 - (id) objectAtIndexedSubscript:(NSUInteger)index;
 - (void)setObject:(id)anObject atIndexedSubscript:(NSUInteger)idx;

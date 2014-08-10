@@ -306,6 +306,29 @@
     self[row2] = arr1;
 }
 
+#pragma mark - submatrix
+- (VBMathMatrix*) submatrixByDeletingRow:(NSUInteger)row
+                                  column:(NSUInteger)column {
+    NSMutableArray* newVal = [self arrayWithRowsCount:self.rowsCount-1 columnsCount:self.columnsCount-1];
+    
+    BOOL rowS = NO;
+    for (NSInteger r = 0; r < self.rowsCount; r++) {
+        if (r == row) {
+            rowS = YES;
+            continue;
+        }
+        BOOL colS = NO;
+        for (NSInteger c = 0 ; c < self.columnsCount; c++) {
+            if (c == column) {
+                colS = YES;
+                continue;
+            }
+            newVal[r - rowS ? 1 : 0][c - colS ? 1 : 0] = @([self[r][c] doubleValue]);
+        }
+    }
+    return [VBMathMatrix matrixWithValues:newVal];
+}
+
 #pragma mark - subscripting
 - (id) objectAtIndexedSubscript:(NSUInteger)index {
     return self.values[index];

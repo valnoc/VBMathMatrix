@@ -13,6 +13,8 @@
 #import "VBZeroDimensionMatrixException.h"
 #import "VBInvalidColumnsCountException.h"
 #import "VBInvalidMatrixDimensionException.h"
+#import "VBRowSelfAdditionException.h"
+#import "VBZeroMultiplicationException.h"
 
 @interface VBMathMatrixExamplesTests : XCTestCase
 
@@ -159,4 +161,33 @@
                                          @[@(3), @(6), @(2)]]];
     XCTAssert(a.isSquare == YES, @"");
 }
+
+- (void) testRowOps {
+    VBMathMatrix* a = [VBMathMatrix matrixWithValues:@[@[@(1), @(2), @(3)],
+                                                       @[@(4), @(5), @(6)],
+                                                       @[@(7), @(8), @(9)]]];
+    VBMathMatrix* b = [VBMathMatrix matrixWithValues:@[@[@(5), @(7), @(9)],
+                                                       @[@(4), @(5), @(6)],
+                                                       @[@(7), @(8), @(9)]]];
+    XCTAssert([[a matrixWithModifiedRowAtIndex:0 byAddingRowAtIndex:1] isEqualToMatrix:b], @"");
+    
+    a = [VBMathMatrix matrixWithValues:@[@[@(1), @(2), @(3)],
+                                         @[@(4), @(5), @(6)],
+                                         @[@(7), @(8), @(9)]]];
+    b = [VBMathMatrix matrixWithValues:@[@[@(9), @(12), @(15)],
+                                         @[@(4), @(5), @(6)],
+                                         @[@(7), @(8), @(9)]]];
+    XCTAssert([[a matrixWithModifiedRowAtIndex:0 byAddingRowAtIndex:1 multipliedByScalar:2.0f] isEqualToMatrix:b], @"");
+    
+    a = [VBMathMatrix matrixWithValues:@[@[@(1), @(2), @(3)],
+                                         @[@(4), @(5), @(6)],
+                                         @[@(7), @(8), @(9)]]];
+    XCTAssertThrowsSpecific([a modifyRowAtIndex:1 byAddingRowAtIndex:1], VBRowSelfAdditionException, @"");
+    
+    a = [VBMathMatrix matrixWithValues:@[@[@(1), @(2), @(3)],
+                                         @[@(4), @(5), @(6)],
+                                         @[@(7), @(8), @(9)]]];
+    XCTAssertThrowsSpecific([a modifyRowAtIndex:1 byAddingRowAtIndex:2 multipliedByScalar:0.0f], VBZeroMultiplicationException, @"");
+}
+
 @end

@@ -97,6 +97,18 @@
                                             columnsCount:columnsCount]];
 }
 
++ (instancetype) identityMatrixWithSize:(NSInteger)size {
+    return [[self alloc] initIdentityWithSize:size];
+}
+- (instancetype) initIdentityWithSize:(NSInteger)size {
+    NSMutableArray* values = [self arrayWithRowsCount:size
+                                         columnsCount:size];
+    for (NSInteger i = 0; i < size; i++) {
+        values[i][i] = @(1.0f);
+    }
+    return [self initWithValues:values];
+}
+
 #pragma mark - props
 - (BOOL) isSquare {
     return self.rowsCount == self.columnsCount;

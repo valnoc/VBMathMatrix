@@ -25,8 +25,13 @@ VBMathMatrix instance represents a mathematical matrix (numbers organized in row
                                                columnsCount:3];
 
 ## Supported features
-1. matrix addition, subsctraction, right multiplication, scalar multiplication/division
-2. transposition
+1. get and set values using subscripting
+    
+        NSLog(@"%@", a[0][0]);
+        a[1][2] = b[0][1];
+
+2. matrix addition, subsctraction, right multiplication, scalar multiplication/division
+3. transposition
 
 ## Coming soon
 1. row operations

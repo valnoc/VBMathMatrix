@@ -58,12 +58,20 @@
 - (VBMathMatrix*) matrixWithModifiedRowAtIndex:(NSUInteger)row1
                             byAddingRowAtIndex:(NSUInteger)row2
                             multipliedByScalar:(double)scalar;
+- (VBMathMatrix*) matrixWithModifiedRowAtIndex:(NSUInteger)row
+                        byScalarMultiplication:(double)scalar;
+- (VBMathMatrix*) matrixBySwitchingRowAtIndex:(NSUInteger)row1
+                               withRowAtIndex:(NSUInteger)row2;
 
 - (void) modifyRowAtIndex:(NSUInteger)row1
        byAddingRowAtIndex:(NSUInteger)row2;
 - (void) modifyRowAtIndex:(NSUInteger)row1
        byAddingRowAtIndex:(NSUInteger)row2
        multipliedByScalar:(double)scalar;
+- (void) modifyRowAtIndex:(NSUInteger)row
+   byScalarMultiplication:(double)scalar;
+- (void) switchRowAtIndex:(NSUInteger)row1
+           withRowAtIndex:(NSUInteger)row2;
 
 #pragma mark - subscripting
 - (id) objectAtIndexedSubscript:(NSUInteger)index;

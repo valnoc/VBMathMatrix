@@ -188,6 +188,14 @@
                                          @[@(4), @(5), @(6)],
                                          @[@(7), @(8), @(9)]]];
     XCTAssertThrowsSpecific([a modifyRowAtIndex:1 byAddingRowAtIndex:2 multipliedByScalar:0.0f], VBZeroMultiplicationException, @"");
+    
+    a = [VBMathMatrix matrixWithValues:@[@[@(1), @(2), @(3)],
+                                         @[@(4), @(5), @(6)],
+                                         @[@(7), @(8), @(9)]]];
+    b = [VBMathMatrix matrixWithValues:@[@[@(4), @(5), @(6)],
+                                         @[@(1), @(2), @(3)],
+                                         @[@(7), @(8), @(9)]]];
+    XCTAssert([[a matrixBySwitchingRowAtIndex:0 withRowAtIndex:1] isEqualToMatrix:b], @"");
 }
 
 @end

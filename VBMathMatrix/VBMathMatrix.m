@@ -253,6 +253,20 @@
           multipliedByScalar:scalar];
     return result;
 }
+- (VBMathMatrix*) matrixWithModifiedRowAtIndex:(NSUInteger)row
+                        byScalarMultiplication:(double)scalar {
+    VBMathMatrix* result = [VBMathMatrix matrixWithValues:self.values];
+    [result modifyRowAtIndex:row
+      byScalarMultiplication:scalar];
+    return result;
+}
+- (VBMathMatrix*) matrixBySwitchingRowAtIndex:(NSUInteger)row1
+                               withRowAtIndex:(NSUInteger)row2 {
+    VBMathMatrix* result = [VBMathMatrix matrixWithValues:self.values];
+    [result switchRowAtIndex:row1
+              withRowAtIndex:row2];
+    return result;
+}
 
 - (void) modifyRowAtIndex:(NSUInteger)row1
        byAddingRowAtIndex:(NSUInteger)row2 {
@@ -273,6 +287,23 @@
     for (NSInteger col = 0; col < self.columnsCount; col++) {
         self[row1][col] = @([self[row1][col] doubleValue] + [self[row2][col] doubleValue] * scalar);
     }
+}
+- (void) modifyRowAtIndex:(NSUInteger)row
+   byScalarMultiplication:(double)scalar {
+    
+    if (scalar == 0.0f) {
+        @throw [VBZeroMultiplicationException exception];
+    }
+    for (NSInteger col = 0; col < self.columnsCount; col++) {
+        self[row][col] = @([self[row][col] doubleValue] * scalar);
+    }
+}
+- (void) switchRowAtIndex:(NSUInteger)row1
+           withRowAtIndex:(NSUInteger)row2 {
+    
+    NSArray* arr1 = self[row1];
+    self[row1] = self[row2];
+    self[row2] = arr1;
 }
 
 #pragma mark - subscripting

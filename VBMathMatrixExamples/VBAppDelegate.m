@@ -16,9 +16,14 @@
 {
     VBMathMatrix* a = [VBMathMatrix matrixWithValues:@[@[@(1), @(2), @(3)],
                                                        @[@(4), @(5), @(6)]]];
+    
+    NSLog(@"%@", a[0][0]);
+    
     VBMathMatrix* b = [VBMathMatrix matrixWithValues:@[@[@(1), @(4)],
                                                        @[@(2), @(5)],
                                                        @[@(3), @(6)]]];
+    
+    a[1][2] = b[0][1];
     
     VBMathMatrix* c = [VBMathMatrix matrixWithRowsCount:3
                                            columnsCount:3];

@@ -27,6 +27,7 @@
 @interface VBMathMatrix : NSObject
 
 @property (nonatomic, readonly, getter = isSquare) BOOL square;
+@property (nonatomic, readonly, getter = isIdentityMatrix) BOOL identityMatrix;
 
 @property (nonatomic, assign, readonly) NSInteger rowsCount;
 @property (nonatomic, assign, readonly) NSInteger columnsCount;

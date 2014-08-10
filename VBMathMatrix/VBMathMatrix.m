@@ -113,6 +113,24 @@
 - (BOOL) isSquare {
     return self.rowsCount == self.columnsCount;
 }
+- (BOOL) isIdentityMatrix {
+    BOOL res = self.isSquare;
+    if (res) {
+        for (NSInteger row = 0; self.rowsCount; row++) {
+            for (NSInteger col = 0; self.columnsCount; col++) {
+                double val = [self[row][col] doubleValue];
+                if ((row == col && val != 1.0f) || (row != col && val != 0.0f)) {
+                    res = NO;
+                    break;
+                }
+            }
+            if (res == NO) {
+                break;
+            }
+        }
+    }
+    return res;
+}
 
 #pragma mark - equality
 - (BOOL) isEqual:(id)object {

@@ -35,8 +35,7 @@
 + (instancetype) matrixWithValues:(NSArray*)values;
 + (instancetype) matrixWithRowsCount:(NSInteger)rowsCount
                         columnsCount:(NSInteger)columnsCount;
-+ (instancetype) identityMatrixWithRowsCount:(NSInteger)rowsCount
-                                columnsCount:(NSInteger)columnsCount;
++ (instancetype) identityMatrixWithSize:(NSInteger)size;
 
 #pragma mark - equality
 - (BOOL) isEqualToMatrix:(VBMathMatrix*)matrix;

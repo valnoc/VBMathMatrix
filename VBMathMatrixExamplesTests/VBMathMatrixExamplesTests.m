@@ -160,6 +160,11 @@
                                          @[@(2), @(5), @(1)],
                                          @[@(3), @(6), @(2)]]];
     XCTAssert(a.isSquare == YES, @"");
+
+    XCTAssert(a.isIdentityMatrix == NO, @"");
+    
+    a = [VBMathMatrix identityMatrixWithSize:4];
+    XCTAssert(a.isIdentityMatrix == YES, @"");
 }
 
 - (void) testRowOps {

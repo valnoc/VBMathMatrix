@@ -116,8 +116,8 @@
 - (BOOL) isIdentityMatrix {
     BOOL res = self.isSquare;
     if (res) {
-        for (NSInteger row = 0; self.rowsCount; row++) {
-            for (NSInteger col = 0; self.columnsCount; col++) {
+        for (NSInteger row = 0; row < self.rowsCount; row++) {
+            for (NSInteger col = 0; col < self.columnsCount; col++) {
                 double val = [self[row][col] doubleValue];
                 if ((row == col && val != 1.0f) || (row != col && val != 0.0f)) {
                     res = NO;

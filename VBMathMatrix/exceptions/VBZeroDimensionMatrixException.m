@@ -27,9 +27,7 @@
 @implementation VBZeroDimensionMatrixException
 
 + (instancetype) exception {
-    return [[self alloc] initWithName:NSStringFromClass(self)
-                               reason:[NSString stringWithFormat:@"%@: Minimum matrix size is 1x1", NSStringFromClass(self.class)]
-                             userInfo:nil];
+    return [self exceptionWithReason:[NSString stringWithFormat:@"Minimum matrix size is 1x1"]];
 }
 
 @end

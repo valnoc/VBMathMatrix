@@ -22,10 +22,8 @@
 //    SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
+#import "VBException.h"
 
-@interface VBZeroMultiplicationException : NSException
+@interface VBZeroMultiplicationException : VBException
 
-+ (instancetype) exception;
-    
 @end

@@ -22,9 +22,9 @@
 //    SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
+#import "VBException.h"
 
-@interface VBInvalidClassException : NSException
+@interface VBInvalidClassException : VBException
 
 + (instancetype) exceptionWithUsedClass:(Class)usedClass
                           expectedClass:(Class)expectedClass;

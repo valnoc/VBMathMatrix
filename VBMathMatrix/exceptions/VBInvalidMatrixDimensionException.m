@@ -31,9 +31,9 @@
                       expectedRowsCount:(NSInteger)expectedRowsCount
                    expectedColumnsCount:(NSInteger)expectedColumnsCount {
    
-    return [[self alloc] initWithName:NSStringFromClass(self)
-                               reason:[NSString stringWithFormat:@"%@: Expected matrix %@x%@, got %@x%@", NSStringFromClass(self.class), @(rowsCount), @(columnsCount), @(expectedRowsCount), @(expectedColumnsCount)]
-                             userInfo:nil];
+    return [self exceptionWithReason:[NSString stringWithFormat:@"Expected matrix %@x%@, got %@x%@",
+                                      @(rowsCount), @(columnsCount),
+                                      @(expectedRowsCount), @(expectedColumnsCount)]];
 }
 
 @end

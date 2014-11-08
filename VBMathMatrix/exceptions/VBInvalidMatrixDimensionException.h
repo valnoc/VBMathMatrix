@@ -22,9 +22,9 @@
 //    SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
+#import "VBException.h"
 
-@interface VBInvalidMatrixDimensionException : NSException
+@interface VBInvalidMatrixDimensionException : VBException
 
 + (instancetype) exceptionWithRowsCount:(NSInteger)rowsCount
                            columnsCount:(NSInteger)columnsCount

@@ -22,9 +22,9 @@
 //    SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
+#import "VBException.h"
 
-@interface VBRowSelfAdditionException : NSException
+@interface VBRowSelfAdditionException : VBException
 
 + (instancetype) exceptionWithRowIndex:(NSUInteger)rowIndex;
 

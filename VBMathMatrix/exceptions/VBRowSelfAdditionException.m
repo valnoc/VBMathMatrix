@@ -28,9 +28,7 @@
 
 + (instancetype) exceptionWithRowIndex:(NSUInteger)rowIndex {
     
-    return [[self alloc] initWithName:NSStringFromClass(self)
-                               reason:[NSString stringWithFormat:@"%@: Row %@ must not be added to itself", NSStringFromClass(self.class), @(rowIndex)]
-                             userInfo:nil];
+    return [self exceptionWithReason:[NSString stringWithFormat:@"Row %@ must not be added to itself", @(rowIndex)]];
 }
 
 @end

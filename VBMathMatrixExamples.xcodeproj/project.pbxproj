@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B73B7E81A0EB7540044BEC4 /* VBException.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B73B7E71A0EB7540044BEC4 /* VBException.m */; };
 		5BC335551971B039009C49C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC335541971B039009C49C5 /* Foundation.framework */; };
 		5BC335571971B039009C49C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC335561971B039009C49C5 /* CoreGraphics.framework */; };
 		5BC335591971B039009C49C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC335581971B039009C49C5 /* UIKit.framework */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B73B7E61A0EB7540044BEC4 /* VBException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBException.h; sourceTree = "<group>"; };
+		5B73B7E71A0EB7540044BEC4 /* VBException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBException.m; sourceTree = "<group>"; };
 		5BC335511971B039009C49C5 /* VBMathMatrixExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VBMathMatrixExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC335541971B039009C49C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5BC335561971B039009C49C5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -95,6 +98,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B73B7E51A0EB7540044BEC4 /* VBException */ = {
+			isa = PBXGroup;
+			children = (
+				5B73B7E61A0EB7540044BEC4 /* VBException.h */,
+				5B73B7E71A0EB7540044BEC4 /* VBException.m */,
+			);
+			path = VBException;
+			sourceTree = "<group>";
+		};
 		5BC335481971B039009C49C5 = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +200,7 @@
 		5BE12E381971B09B004EC648 /* VBMathMatrix */ = {
 			isa = PBXGroup;
 			children = (
+				5B73B7E51A0EB7540044BEC4 /* VBException */,
 				5BE12E391971B0F2004EC648 /* VBMathMatrix.h */,
 				5BE12E3A1971B0F2004EC648 /* VBMathMatrix.m */,
 				5BCB6FEB1A0EAB630098EE3A /* exceptions */,
@@ -300,6 +313,7 @@
 				5BCB6FFD1A0EAB630098EE3A /* VBZeroMultiplicationException.m in Sources */,
 				5BC335611971B039009C49C5 /* main.m in Sources */,
 				5BCB6FFA1A0EAB630098EE3A /* VBInvalidMatrixDimensionException.m in Sources */,
+				5B73B7E81A0EB7540044BEC4 /* VBException.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

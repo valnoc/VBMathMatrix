@@ -22,12 +22,31 @@
 //    SOFTWARE.
 //
 
-#import "VBZeroMultiplicationException.h"
+#import "VBException.h"
 
-@implementation VBZeroMultiplicationException
+@implementation VBException
 
 + (instancetype) exception {
-    return [self exceptionWithReason:[NSString stringWithFormat:@"Zero multiplication is prohibitted"]];
+    return [self exceptionWithReason:@""
+                            userInfo:nil];
+}
+
++ (instancetype) exceptionWithReason:(NSString*)reason {
+    return [self exceptionWithReason:reason
+                            userInfo:nil];
+}
+
++ (instancetype) exceptionWithUserInfo:(NSDictionary*)userInfo {
+    return [self exceptionWithReason:@""
+                            userInfo:userInfo];
+}
+
++ (instancetype) exceptionWithReason:(NSString*)reason
+                            userInfo:(NSDictionary*)userInfo {
+    
+    return [[self alloc] initWithName:NSStringFromClass([self class])
+                               reason:reason
+                             userInfo:userInfo];
 }
 
 @end

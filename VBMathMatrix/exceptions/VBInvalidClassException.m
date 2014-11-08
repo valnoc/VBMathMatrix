@@ -28,10 +28,8 @@
 
 + (instancetype) exceptionWithUsedClass:(Class)usedClass
                           expectedClass:(Class)expectedClass{
-
-    return [[self alloc] initWithName:NSStringFromClass(self)
-                               reason:[NSString stringWithFormat:@"%@: Expected object of %@ class instead of %@ class", NSStringFromClass(self.class), usedClass, expectedClass]
-                             userInfo:nil];
+    return [self exceptionWithReason:[NSString stringWithFormat:@"Expected object of %@ class instead of %@ class",
+                                      NSStringFromClass(usedClass), NSStringFromClass(expectedClass)]];
 }
 
 @end

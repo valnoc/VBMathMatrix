@@ -22,9 +22,9 @@
 //    SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
+#import "VBException.h"
 
-@interface VBInvalidColumnsCountException : NSException
+@interface VBInvalidColumnsCountException : VBException
 
 + (instancetype) exceptionWithColumnsCount:(NSInteger)columnsCount
                              expectedCount:(NSInteger)expectedCount;
